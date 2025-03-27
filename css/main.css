@@ -1,0 +1,5 @@
+.fa-twitter:before {
+    content: '𝕏';
+    font-family: unset;
+    font-weight: bold;
+}
