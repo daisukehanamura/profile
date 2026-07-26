@@ -3,106 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プロフィール</title>
+    <title>DellGreen</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 0.02em;
+        }
+        .section-divider {
+            border-color: #2a2a2a;
+        }
+        .tag {
+            border: 1px solid #3a3a3a;
+            color: #9ca3af;
+            font-size: 0.75rem;
+            padding: 2px 10px;
+            border-radius: 2px;
+        }
+        .social-link {
+            color: #6b7280;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+        }
+        .social-link:hover {
+            color: #d1d5db;
+        }
+        h2 {
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            color: #6b7280;
+        }
+        .card {
+            border: 1px solid #1f1f1f;
+            background-color: #0f0f0f;
+        }
+        .exp-body {
+            max-height: 3.5rem;
+            overflow: hidden;
+            position: relative;
+            transition: max-height 0.4s ease;
+        }
+        .exp-body.open {
+            max-height: 500px;
+        }
+        .exp-fade {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1.5rem;
+            background: linear-gradient(transparent, #0f0f0f);
+            transition: opacity 0.3s;
+        }
+        .exp-body.open .exp-fade {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .exp-toggle {
+            background: none;
+            border: none;
+            color: #4b5563;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            padding: 0;
+            margin-top: 8px;
+            transition: color 0.2s;
+        }
+        .exp-toggle:hover {
+            color: #9ca3af;
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-gray-100">
-    <div class="container mx-auto p-4">
-        <div class="bg-gray-800 rounded-lg shadow-lg p-6">
-            <div class="flex items-center space-x-4">
-                <img src="image/profile.jpg" alt="プロフィール画像" class="w-24 h-24 rounded-full">
+<body style="background-color: #080808; color: #e5e7eb;">
+
+    <div class="max-w-2xl mx-auto px-6 py-24">
+
+        <!-- Hero -->
+        <section class="mb-24">
+            <div class="flex items-center space-x-6 mb-8">
+                <img src="image/profile.jpg" alt="プロフィール画像" class="w-16 h-16 rounded-full" style="filter: grayscale(30%);">
                 <div>
-                    <h1 class="text-2xl font-bold">DellGreen</h1>
-                    <p class="text-gray-400">頑張りたいなあ～</p>
-                    <div class="flex space-x-4 mt-4">
-                        <a href="https://twitter.com/HanamaruDell" class="text-blue-400 hover:text-blue-600">
-                            <i class="fab fa-twitter"></i> Twitter
-                        </a>
-                        <a href="https://github.com/daisukehanamura" class="text-gray-300 hover:text-gray-500">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
-                    <div class="flex space-x-4 mt-2">
-                        <a href="https://qiita.com/DellGreen" class="text-green-400 hover:text-green-600">
-                            <i class="fas fa-pen"></i> Qiita
-                        </a>
-                        <a href="https://zenn.dev/dell_green" class="text-blue-300 hover:text-blue-500">
-                            <i class="fas fa-book"></i> Zenn
-                        </a>
-                        <a href="https://note.com/dell_green" class="text-white-400 hover:text-white-600">
-                            <i class="fas fa-sticky-note"></i> note
-                        </a>
-                    </div>
+                    <h1 class="text-2xl font-light tracking-widest text-white">DellGreen</h1>
+                    <p class="text-gray-500 text-sm mt-1">楽しく、美しく、着実に。</p>
+                    <p class="text-gray-600 text-xs mt-1 tracking-widest uppercase">Backend Engineer &amp; AI-Driven Developer</p>
                 </div>
             </div>
-            <div class="mt-8">
-                <h2 class="text-2xl font-semibold border-b-2 border-gray-600 pb-2">趣味</h2>
-                <div class="mt-4">
-                    <p class="text-gray-400">NBA、HIPHOP、キャンプ、麻雀、友達と遊ぶ</p>
+            <div class="flex flex-wrap gap-4">
+                <a href="https://twitter.com/HanamaruDell" class="social-link"><i class="fab fa-twitter mr-1"></i>Twitter</a>
+                <a href="https://github.com/daisukehanamura" class="social-link"><i class="fab fa-github mr-1"></i>GitHub</a>
+                <a href="https://qiita.com/DellGreen" class="social-link"><i class="fas fa-pen mr-1"></i>Qiita</a>
+                <a href="https://zenn.dev/dell_green" class="social-link"><i class="fas fa-book mr-1"></i>Zenn</a>
+                <a href="https://note.com/dell_green" class="social-link"><i class="fas fa-sticky-note mr-1"></i>note</a>
+                <a href="https://scrapbox.io/dellgreen/" class="social-link"><i class="fas fa-box mr-1"></i>Scrapbox</a>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="mb-20">
+            <h2 class="mb-6">About</h2>
+            <hr class="section-divider mb-8">
+            <p class="text-gray-300 font-light leading-relaxed text-sm">
+                バックエンドエンジニア。Java / Spring Boot / DBMS を主戦場とし、大規模レガシープロダクトと向き合うことも自分のフィールドと捉えている。<br><br>
+                PLとして推進・課題整理・レビューを担いながら、同時にコードを書く現場エンジニアでもある。<br><br>
+                Claude Code・GitHub Copilot などのAIツールを積極的に活用し、開発フロー自体を継続的に改善する「AI-Driven」な開発スタイルを追求。ツールを使いこなすだけでなく、チームに展開できる仕組みとして昇華させることを意識している。<br><br>
+                「楽しく仕事をすること」「目の前の課題を解決すること」「自動化で楽をすること」を大切にしている。自由を愛するINTJ。
+            </p>
+        </section>
+
+        <!-- Experience -->
+        <!--
+        <section class="mb-20">
+            <h2 class="mb-6">Experience</h2>
+            <hr class="section-divider mb-8">
+            <div class="space-y-4">
+
+                <div class="card p-5">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-white font-light text-sm mb-1">購買管理システム　パッケージ導入</p>
+                            <p class="text-gray-500 text-xs">PL / 顧客折衝 / 要件定義</p>
+                        </div>
+                    </div>
+                    <div class="exp-body mt-3">
+                        <div class="exp-fade"></div>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            顧客との要件定義・折衝を主導し、業務要件をシステム仕様に落とし込む工程を担当。<br><br>
+                            開発メンバー約5名のPLとして、課題取りまとめ・タスク割り振り・スケジュール管理を推進。<br>
+                            コードレビューを通じてチームのコード品質維持にも貢献。<br><br>
+                            パッケージ製品の特性上、標準機能と個別カスタマイズの境界を意識した設計判断が求められ、顧客への提案・説得も含めて対応。
+                        </p>
+                    </div>
+                    <button class="exp-toggle" onclick="toggleExp(this)">+ もっと見る</button>
+                </div>
+
+                <div class="card p-5">
+                    <div>
+                        <p class="text-white font-light text-sm mb-1">就業管理システム　自社開発</p>
+                        <p class="text-gray-500 text-xs">PL / 設計 / 実装</p>
+                    </div>
+                    <div class="exp-body mt-3">
+                        <div class="exp-fade"></div>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            要件定義から設計・実装・テストまで全工程に関与。<br><br>
+                            PLとしてチームの推進役を担いながら、自身もコードを書く両面性を持って対応。<br>
+                            開発が円滑に進む環境づくり（ルール整備・タスク管理・メンバーのブロック解消）を重視。<br><br>
+                            Java / Spring Boot / SQL を中心とした技術スタックで、保守性・可読性を意識した設計・実装を徹底。
+                        </p>
+                    </div>
+                    <button class="exp-toggle" onclick="toggleExp(this)">+ もっと見る</button>
+                </div>
+
+                <div class="card p-5">
+                    <div>
+                        <p class="text-white font-light text-sm mb-1">レガシープロダクト改善 / 便利ツール開発</p>
+                        <p class="text-gray-500 text-xs">課題解決 / 自動化 / AI活用</p>
+                    </div>
+                    <div class="exp-body mt-3">
+                        <div class="exp-fade"></div>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            大規模レガシーシステムの課題を継続的に特定・改善。<br><br>
+                            <span class="text-gray-300">作成したツール・仕組み：</span><br>
+                            · DAOオブジェクト検索ツール（コードベース横断検索の効率化）<br>
+                            · バージョンアップスクリプト自動生成ツール<br>
+                            · ExcelベースのIF設計書をMarkdown化するスクリプト<br>
+                            · AIによるテスト観点・チェックリスト自動生成<br>
+                            · RedmineへのチケットをClaude Code Skillで自動登録<br>
+                            · コードレビューの自動化Skill<br>
+                            · <span class="text-gray-600">... and more</span><br><br>
+                            チーム全体の生産性を底上げする「仕組みを作る」アプローチを一貫して実践。
+                        </p>
+                    </div>
+                    <button class="exp-toggle" onclick="toggleExp(this)">+ もっと見る</button>
+                </div>
+
+            </div>
+        </section>
+        -->
+
+        <!-- Tech -->
+        <section class="mb-20">
+            <h2 class="mb-6">Tech</h2>
+            <hr class="section-divider mb-8">
+            <div class="mb-6">
+                <p class="text-gray-500 text-xs mb-3 tracking-widest uppercase">Main</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">DBMS / SQL</span>
                 </div>
             </div>
-            <div class="mt-8">
-                <h2 class="text-2xl font-semibold border-b-2 border-gray-600 pb-2">スキル</h2>
-                <div class="grid grid-cols-3 gap-4 mt-4">
-                    <div class="mb-4">
-                        <span class="block text-gray-400">Java</span>
-                        <div class="w-full bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <span class="block text-gray-400">Spring</span>
-                        <div class="w-full bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <span class="block text-gray-400">JavaScript</span>
-                        <div class="w-full bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 70%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <span class="block text-gray-400">TypeScript</span>
-                        <div class="w-full bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 50%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <span class="block text-gray-400">React</span>
-                        <div class="w-full bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 50%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <span class="block text-gray-400">SQL</span>
-                        <div class="w-full bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <span class="block text-gray-400">HTML/CSS</span>
-                        <div class="w-full bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 50%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <span class="block text-gray-400">AWS</span>
-                        <div class="w-full bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 40%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <span class="block text-gray-400">Azure</span>
-                        <div class="w-full bg-gray-700 rounded-full h-2.5">
-                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 40%"></div>
-                        </div>
-                    </div>
+            <div class="mb-6">
+                <p class="text-gray-500 text-xs mb-3 tracking-widest uppercase">Sub</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag">Next.js</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">TypeScript</span>
                 </div>
             </div>
-        </div>
+            <div>
+                <p class="text-gray-500 text-xs mb-3 tracking-widest uppercase">Interest</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag">Clean Code</span>
+                    <span class="tag">SOLID</span>
+                    <span class="tag">Design Pattern</span>
+                    <span class="tag">TDD (学習中)</span>
+                    <span class="tag">DDD (学習中)</span>
+                    <span class="tag">AI × 開発</span>
+                    <span class="tag">Claude Code</span>
+                    <span class="tag">GitHub Copilot</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hobby -->
+        <section class="mb-20">
+            <h2 class="mb-6">Hobby</h2>
+            <hr class="section-divider mb-8">
+            <div class="flex flex-wrap gap-2">
+                <span class="tag">NBA</span>
+                <span class="tag">HIPHOP</span>
+                <span class="tag">キャンプ</span>
+                <span class="tag">麻雀</span>
+                <span class="tag">友達と遊ぶ</span>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-24 pt-8 border-t" style="border-color: #1a1a1a;">
+            <p class="text-gray-700 text-xs text-center tracking-widest">© DellGreen</p>
+        </footer>
+
     </div>
+
+    <script>
+        function toggleExp(btn) {
+            const body = btn.previousElementSibling;
+            const isOpen = body.classList.contains('open');
+            body.classList.toggle('open');
+            btn.textContent = isOpen ? '+ もっと見る' : '− 閉じる';
+        }
+    </script>
 </body>
 </html>
